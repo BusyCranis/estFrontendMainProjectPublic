@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <title>Chat Widget Embedded example | ChatBot.com</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      body {
+        background: #ffffff;
+      }
+
+      * {
+        font-family: "Open Sans", sans-serif;
+        box-sizing: border-box;
+        color: #22272d;
+        padding: 0;
+        margin: 0;
+      }
+
+      h1 {
+        width: 100%;
+        font-weight: bold;
+      }
+
+      iframe {
+        border: 0;
+      }
+
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 24px;
+        padding: 24px;
+        margin: 0 auto;
+        justify-items: center;
+      }
+
+      section > .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      section > .container > div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #f2f2f2;
+        border-radius: 20px;
+        padding: 24px;
+        gap: 1rem;
+      }
+
+      section div p {
+        width: 100%;
+        border-radius: 20px;
+        background: #f2f2f2;
+        padding: 6px;
+      }
+
+      #widget {
+        width: 100%;
+        min-width: 420px;
+        min-height: 710px;
+        height: auto;
+      }
+
+      @media only screen and (max-width: 768px) {
+        section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div id="widget"></div>
+      <div class="container">
+        <div>
+          <img
+            width="120"
+            alt="ChatBot logo"
+            src="https://www.chatbot.com/chatbot-logo.svg"
+          />
+          <h1>Embedded Chat Widget</h1>
+          <div>
+            This is an example of the implementation of an embedded Chat Widget.
+            You can find and reuse the code used on this page. It can be found
+            on our
+            <strong
+              ><a
+                href="https://gist.github.com/humannus/ad5c4f407a81cbe6f0a5a8014c7315a9"
+                target="_blank"
+                >GitHub Repository</a
+              ></strong
+            >. A tutorial covering the implementation process is
+            <strong
+              ><a
+                href="https://www.chatbot.com/help/install-chatbot/widget-installation/#how-to-embed-chat-widget-on-a-website"
+                target="_blank"
+                >available here</a
+              ></strong
+            >.
+          </div>
+        </div>
+        <div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+        <div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+        <div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Replace the below code with your chat widget code -->
+    <script type="text/javascript">
+      window.__ow = window.__ow || {};
+      window.__ow.organizationId = "b9c3b2e3-c30b-4ffd-9456-2ef926ae2abd";
+      window.__ow.template_id = "6039c5f3-63b8-4599-8f53-8253192eff7d";
+      window.__ow.integration_name = "manual_settings";
+      window.__ow.product_name = "chatbot";
+      // ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+
+      (function (n, t, c) {
+        function i(n) {
+          return e._h ? e._h.apply(null, n) : e._q.push(n);
+        }
+        var e = {
+          _q: [],
+          _h: null,
+          _v: "2.0",
+          on: function () {
+            i(["on", c.call(arguments)]);
+          },
+          once: function () {
+            i(["once", c.call(arguments)]);
+          },
+          off: function () {
+            i(["off", c.call(arguments)]);
+          },
+          get: function () {
+            if (!e._h)
+              throw new Error(
+                "[OpenWidget] You can't use getters before load."
+              );
+            return i(["get", c.call(arguments)]);
+          },
+          call: function () {
+            i(["call", c.call(arguments)]);
+          },
+          init: function () {
+            var n = t.createElement("script");
+            (n.async = !0),
+              (n.type = "text/javascript"),
+              (n.src = "./openwidget.js"),
+              t.head.appendChild(n);
+          },
+        };
+        !n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e);
+      })(window, document, [].slice);
+
+      window.__ow.custom_container = document.getElementById("widget");
+
+      // [note]: open chat widget window after load
+      OpenWidget.on("ready", OpenWidget.call("maximize"));
+
+      console.log(OpenWidget);
+    </script>
+    <!-- Replace the above code with your chat widget code -->
+  </body>
+</html>
