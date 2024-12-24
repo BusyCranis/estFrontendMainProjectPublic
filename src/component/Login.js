@@ -42,10 +42,60 @@ const Login = (props) => {
   return (
     <div>
 
-
-
-
-
+      <h2 className={styles["login-title"]}>이메일로 로그인</h2>
+        <p>다시 꿈꾸러 오셔서 기뻐요!</p>
+        <LoginForm
+          onSubmit={handleEmailLogin}
+          className={styles["login-form"]}
+        >
+          <label className={styles["id-label"]}>
+            이메일
+            <Input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label className={styles["pw-label"]}>
+            비밀번호
+            <Input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <p role="alert" className={styles["error-message"]}>
+            {error && "이메일 또는 비밀번호가 일치하지 않습니다"}
+          </p>
+          <Button
+            type="submit"
+            highlight={true}
+            className={styles["login-button"]}
+          >
+            로그인
+          </Button>
+          <div className={styles["google-login"]}>
+            <p>다른 방법으로 로그인하기</p>
+            <button type="button" onClick={handleGoogleLogin}>
+              <img
+                src="/images/google-logo.svg"
+                width={40}
+                height={40}
+                alt="google 로그인"
+              />
+            </button>
+          </div>
+          <div className={styles["join-button"]}>
+            <span>회원이 아니신가요?</span>
+            <Button type="button" onClick={() => setShowSignupForm(true)}>
+              가입하기
+            </Button>
+          </div>
+        </LoginForm>
 
 
 
